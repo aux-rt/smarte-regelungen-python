@@ -1,0 +1,16 @@
+[project]
+name="smarte_regelungen"
+version="2025.0.0"
+authors=[
+	{name = "Alexander Göbel", email="alexander.goebel@uni-a.de"}
+]
+readme="README.md"
+requires-python=">=3.12"
+dependencies=[
+	# für 
+	"numpy",
+	"scipy",
+	"sympy",
+	"pandas",
+]
+
