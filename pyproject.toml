@@ -30,6 +30,9 @@ dependencies=[
 	"transformers"
 ]
 
+[project.scripts]
+smarte-regelungen = "jupyterlab.labapp:main"
+
 [tool.uv.build-backend]
 module-name = []
 
