@@ -2,7 +2,7 @@
 	description = "smarte-regelungen";
 
 	inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+		nixpkgs.url = "nixpkgs/nixos-25.05";
 
 		pyproject-nix = {
 			url = "github:pyproject-nix/pyproject.nix";
