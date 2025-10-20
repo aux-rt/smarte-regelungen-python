@@ -92,6 +92,7 @@
 
 			packages = forAllSystems (system: {
 				default = pythonSets.${system}.mkVirtualEnv "smarte-regelungen-env" workspace.deps.default;
+				server = pythonSets.${system}.mkVirtualEnv "smarte-regelungen-env" workspace.deps.all;
 			});
 		};
 }

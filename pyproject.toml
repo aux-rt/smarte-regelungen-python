@@ -30,6 +30,11 @@ dependencies=[
 	"transformers"
 ]
 
+[project.optional-dependencies]
+hub = [
+	"jupyterhub"
+]
+
 [project.scripts]
 smarte-regelungen = "jupyterlab.labapp:main"
 
