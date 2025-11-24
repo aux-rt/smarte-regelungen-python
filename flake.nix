@@ -45,6 +45,30 @@
 				root = "$REPO_ROOT";
 			};
 
+			buildSystemOverrides = final: prev: {
+				pyb2d3-sandbox = prev.pyb2d3-sandbox.overrideAttrs (old: {
+					nativeBuildInputs =
+						old.nativeBuildInputs
+						++ final.resolveBuildSystem {
+							setuptools = [];
+						};
+				});
+				pyb2d3-sandbox-ipycanvas = prev.pyb2d3-sandbox-ipycanvas.overrideAttrs (old: {
+					nativeBuildInputs =
+						old.nativeBuildInputs
+						++ final.resolveBuildSystem {
+							setuptools = [];
+						};
+				});
+				pyb2d3-sandbox-jupyter = prev.pyb2d3-sandbox-jupyter.overrideAttrs (old: {
+					nativeBuildInputs =
+						old.nativeBuildInputs
+						++ final.resolveBuildSystem {
+							setuptools = [];
+						};
+				});
+			};
+
 			pythonSets = forAllSystems (
 				system:
 				let
@@ -58,12 +82,16 @@
 						lib.composeManyExtensions [
 							pyproject-build-systems.overlays.wheel
 							overlay
+							(f: p: { pythonPkgsBuildHost = p.pythonPkgsBuildHost.overrideScope buildSystemOverrides; })
+							buildSystemOverrides
 						]
 					)
 			);
 
 		in
 		{
+			inherit pythonSets;
+
 			devShells = forAllSystems (
 				system:
 				let
