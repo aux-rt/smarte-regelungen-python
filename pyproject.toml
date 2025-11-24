@@ -20,6 +20,10 @@ dependencies=[
 	"numpy",
 	"pandas",
 	"pillow",
+	"pyb2d3>=0.7.4",
+	"pyb2d3-sandbox",
+	"pyb2d3-sandbox-ipycanvas",
+	"pyb2d3-sandbox-jupyter",
 	"pygame-ce",
 	"scikit-fuzzy",
 	"scikit-learn",
@@ -27,7 +31,7 @@ dependencies=[
 	"sympy",
 	"tensorflow",
 	"tqdm",
-	"transformers"
+	"transformers",
 ]
 
 [project.optional-dependencies]
@@ -40,6 +44,11 @@ smarte-regelungen = "jupyterlab.labapp:main"
 
 [tool.uv.build-backend]
 module-name = []
+
+[tool.uv.sources]
+pyb2d3-sandbox = { git = "https://github.com/derthorsten/pyb2d3.git", subdirectory = "companion_packages/pyb2d3_sandbox" }
+pyb2d3-sandbox-ipycanvas = { git = "https://github.com/derthorsten/pyb2d3.git", subdirectory = "companion_packages/pyb2d3_sandbox_ipycanvas" }
+pyb2d3-sandbox-jupyter = { git = "https://github.com/derthorsten/pyb2d3.git", subdirectory = "companion_packages/pyb2d3_sandbox_jupyter" }
 
 [build-system]
 requires = ["uv_build>=0.8.19,<0.9.0"]
