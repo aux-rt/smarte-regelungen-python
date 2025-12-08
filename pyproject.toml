@@ -10,7 +10,7 @@ dependencies=[
 	"av",
 	"control",
 	"gymnasium",
-	"imageio",
+	"imageio>=2.37.1",
 	"ipykernel",
 	"jupyter",
 	"jupyterlab",
