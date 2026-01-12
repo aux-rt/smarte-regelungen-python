@@ -16,6 +16,7 @@ dependencies=[
 	"jupyterlab",
 	"keras",
 	"matplotlib",
+	"networkx",
 	"notebook",
 	"numpy",
 	"pandas",
